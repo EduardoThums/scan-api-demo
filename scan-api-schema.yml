@@ -8,3 +8,13 @@ endpoints:
         tests:
           - name: status_code_is_200
             assert:  ${{ response.status_code == 200 }}
+        vars:
+          fighter_id:  ${{ response.json()['id'] }}
+
+      - name: get_created_figher
+        path: /fighters/${fighter_id}
+        method: GET
+        tests:
+          - name: status_code_is_200
+            assert:  ${{ response.status_code == 200 }}
+
