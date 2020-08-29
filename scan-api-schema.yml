@@ -1,0 +1,10 @@
+endpoints:
+  - name: scanapi-demo
+    path: http://localhost:5000
+    requests:
+      - name: create_new_figher
+        path: /fighters
+        method: POST
+        tests:
+          - name: status_code_is_200
+            assert:  ${{ response.status_code == 200 }}
