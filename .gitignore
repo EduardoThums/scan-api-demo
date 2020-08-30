@@ -212,3 +212,5 @@ fabric.properties
 .idea/
 
 scanapi-report.html
+
+playground.py
